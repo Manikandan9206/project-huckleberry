@@ -38,9 +38,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.error-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .error-box {
-  width: 500px;
-  height: 400px;
+  width: min(500px, 80%);
+  height: min(400px, 50%);
   // position: absolute;
   // top: 50%;
   // left: 50%;
@@ -49,7 +55,7 @@ export default {
   background-color: #2c2c2c;
   box-shadow: 10px 10px 0 #fff;
   margin: auto;
-  margin-top: 20rem;
+  // margin-top: 20rem;
 
   display: grid;
   grid-template-rows: 1fr 80px;
@@ -59,21 +65,30 @@ export default {
   .message-box {
     h1 {
       font-size: 128px;
+      @media (max-width: 500px) {
+        font-size: 100px;
+      }
       color: #2c2c2c;
       -webkit-text-stroke-width: 3px;
       -webkit-text-stroke-color: #fff;
     }
     h2 {
       font-size: 36px;
+      @media (max-width: 500px) {
+        font-size: 26px;
+      }
       text-transform: uppercase;
     }
   }
   .home-link {
-    width: 400px;
+    width: 90%;
     height: 40px;
     margin: 0 auto;
     background-color: #fff;
     font-size: 28px;
+    @media (max-width: 500px) {
+      font-size: 20px;
+    }
     font-weight: 600;
     display: flex;
     justify-content: center;
