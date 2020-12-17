@@ -1,16 +1,20 @@
 import Vuex from 'vuex'
 
 import firebase from 'firebase'
-import { auth } from '../plugins/firebase'
+import { auth, db } from '../plugins/firebase'
 
 const createStore = () => {
   return new Vuex.Store({
     state: () => ({
       user: null,
+      liveMessages: [],
     }),
     mutations: {
       setUser(state, payload) {
         state.user = payload
+      },
+      pushMessages(state, payload) {
+        state.liveMessages = payload
       },
     },
     actions: {
@@ -29,6 +33,33 @@ const createStore = () => {
           .catch((error) => {
             console.log('SignIn Error')
           })
+      },
+      sendLiveMessage({ state }, message) {
+        console.log(message)
+        db.collection('live-messages')
+          .add({
+            userName: state.user.userName,
+            userMessage: message,
+          })
+          .then((result) => {
+            console.log('Message Sent | ', result)
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      },
+      fetchLiveMessages({ commit }) {
+        db.collection('live-messages').onSnapshot((querySnapshot) => {
+          console.log('fetchLiveMessages | ', querySnapshot)
+          const messages = []
+          querySnapshot.forEach((doc) => {
+            messages.push(doc.data())
+          })
+          commit('pushMessages', messages)
+        })
+      },
+      stopFetchLiveMessages() {
+        console.log('destroyed')
       },
     },
   })

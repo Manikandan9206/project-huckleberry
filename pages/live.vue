@@ -4,20 +4,11 @@
 
     <div class="message-box">
       <div class="messages">
-        <div class="message">
-          <span class="name">User 01 G</span>
+        <div class="message" v-for="(message, i) in liveMessages" :key="i">
+          <span class="name">{{ message.userName }}</span>
           <p class="msg">
-            Lorem Ipsum dolor amit setLorem G Ipsum dolor amit setLorem Ipsum
-            dolor amit set
+            {{ message.userMessage }}
           </p>
-        </div>
-        <div class="message">
-          <span class="name">User 02</span>
-          <p class="msg">Lorem Ipsum dolor amit set</p>
-        </div>
-        <div class="message">
-          <span class="name">User 03</span>
-          <p class="msg">Lorem Ipsum dolor amit set</p>
         </div>
       </div>
       <div class="send-msg">
@@ -28,7 +19,7 @@
             dense
             full-width
             append-icon="mdi-send"
-            @click:append="sendMessage"
+            @click:append="sendLiveMessage"
           ></v-text-field>
         </div>
         <div class="not-signed" v-else>
@@ -40,6 +31,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
   data() {
     return {
@@ -47,18 +39,27 @@ export default {
     }
   },
   computed: {
-    user() {
-      return this.$store.state.user
-    },
+    ...mapState(['user', 'liveMessages']),
   },
   methods: {
     signIn() {
       console.log('signing In')
       this.$store.dispatch('signIn')
     },
-    sendMessage() {
+    sendLiveMessage() {
       console.log(this.message)
+      if (this.message) {
+        this.$store.dispatch('sendLiveMessage', this.message)
+        this.message = ''
+      }
     },
+  },
+  mounted() {
+    console.log('live.vue - MOUNTED')
+    this.$store.dispatch('fetchLiveMessages')
+  },
+  destroyed() {
+    this.$store.dispatch('stopFetchLiveMessages')
   },
 }
 </script>
@@ -76,10 +77,28 @@ export default {
   grid-template-rows: 1fr 50px;
 
   .messages {
+    overflow-y: scroll;
     padding: 1.5rem;
     font-family: 'Montserrat', sans-serif;
+
+    &::-webkit-scrollbar-track {
+      // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #252525;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #000;
+      border-radius: 4px;
+    }
     .message {
       .name {
+        opacity: 0.75;
         margin-left: 8px;
         font-size: 10px;
       }
