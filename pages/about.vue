@@ -91,7 +91,7 @@
     </div>
 
     <div class="privacy-policy">
-      <h1 class="head_text">Privacy Policy</h1>
+      <h1 class="head_text">Code of Conduct</h1>
       <div class="policies">
         <v-expansion-panels accordion focusable hover tile>
           <v-expansion-panel v-for="(item, i) in 5" :key="i">
@@ -123,10 +123,6 @@ export default {
 .about-us {
   max-width: 1200px;
   margin: 4rem auto;
-  &--title {
-    h1 {
-    }
-  }
   &--content {
     margin: 3rem;
     display: grid;

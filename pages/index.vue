@@ -1,12 +1,13 @@
 <template>
   <v-layout column justify-center align-center text-center>
+
     <section id="first-page">
       <div class="first-page--image my-2 my-sm-5">
         <img src="/DSC_cover.png" alt="DSC Cover" />
       </div>
       <div class="first-page--actions py-1 py-lg-5">
         <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn explore-btn">
-          Explore Now
+          Join us
         </v-btn>
       </div>
     </section>
@@ -64,8 +65,8 @@
         </div>
       </div>
       <div class="action">
-        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn">
-          Join Us
+        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn" nuxt to="/about">
+          Explore More
         </v-btn>
       </div>
     </section>
@@ -81,7 +82,7 @@
         </div>
       </div>
       <div class="action">
-        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn">
+        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn" target="_blank" href="https://dsc.community.dev/national-institute-of-technology-rourkela/">
           Wanna Attend!
         </v-btn>
       </div>
@@ -98,11 +99,12 @@
         </div>
       </div>
       <div class="action">
-        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn">
+        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn" href="https://github.com/dscnitrourkela" target="_blank">
           Way to All Repo
         </v-btn>
       </div>
     </section>
+
     <section id="footer" class="footer">
       <div class="footer-top">
         <div class="footer-top--left">
@@ -125,7 +127,7 @@
               <ion-icon name="mail-open-sharp"></ion-icon>
             </div>
             <div class="cont">
-              <h3><span>Mails @ </span>dsc.nitr@gmail.com</h3>
+              <h3><span>Mail to </span> <a href="mailto:dsc.nitr@gmail.com">dsc.nitr@gmail.com</a> </h3>
             </div>
           </div>
         </div>
@@ -375,6 +377,11 @@ export default {
       }
     }
   }
+  .action {
+    a {
+      color: #000;
+    }
+  }
 }
 
 #events {
@@ -428,6 +435,11 @@ export default {
       }
     }
   }
+  .action {
+    a {
+      color: #000;
+    }
+  }
 }
 
 #projects {
@@ -458,6 +470,11 @@ export default {
       @media (max-width: 840px) {
         grid-template-columns: repeat(1, minmax(400px, 1fr));
       }
+    }
+  }
+  .action {
+    a {
+      color: #000;
     }
   }
 }

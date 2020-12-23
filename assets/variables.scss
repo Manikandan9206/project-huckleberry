@@ -26,11 +26,20 @@ $btn-transition-duration: 0.1s !important !default;
 .v-expansion-panel-heade {
   font-size: 2rem !important;
 }
-.theme--dark.v-expansion-panels .v-expansion-panel {
+.about-container .theme--dark.v-expansion-panels .v-expansion-panel {
   background-color: #2c2c2c;
 }
 .v-expansion-panel {
   &::before {
     box-shadow: none !important;
   }
+}
+
+.v-card__title.headline {
+  font-size: 3rem !important;
+  line-height: 1.5;
+}
+.v-card__text {
+  font-size: 2rem !important;
+  line-height: 1.2;
 }

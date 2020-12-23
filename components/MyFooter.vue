@@ -3,27 +3,27 @@
     <div class="social">
       <p>Follow Us</p>
       <div class="social-icons">
-        <v-btn icon fab href="#">
+        <v-btn icon fab href="https://github.com/dscnitrourkela">
           <ion-icon name="logo-github"></ion-icon>
         </v-btn>
 
-        <v-btn icon fab href="#">
+        <v-btn icon fab href="https://linkedin.com/company/dscnitrourkela/">
           <ion-icon name="logo-linkedin"></ion-icon>
         </v-btn>
 
-        <v-btn icon fab href="#">
+        <v-btn icon fab href="https://facebook.com/dscnitrourkela">
           <ion-icon name="logo-facebook"></ion-icon>
         </v-btn>
 
-        <v-btn icon fab href="#">
+        <v-btn icon fab href="https://twitter.com/dscnitrourkela">
           <ion-icon name="logo-twitter"></ion-icon>
         </v-btn>
 
-        <v-btn icon fab href="#">
+        <v-btn icon fab href="https://instagram.com/dscnitrourkela/">
           <ion-icon name="logo-instagram"></ion-icon>
         </v-btn>
 
-        <v-btn icon fab href="#">
+        <v-btn icon fab href="https://medium.com/dsc-nit-rourkela">
           <ion-icon name="logo-medium"></ion-icon>
         </v-btn>
       </div>
@@ -31,22 +31,89 @@
     <div class="links">
       <div class="links-left">
         <p>From You</p>
-        <a href="#">Feedback</a>
-        <a href="#">Contributions</a>
+        <a href="mailto:team@dscnitrourkela.org">Feedback</a>
+        <a href="">Contributions</a>
         <a href="#">Subscribe</a>
       </div>
       <div class="links-middle">
         <p>Useful Links</p>
-        <a href="#">Terms Of Service</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Student Developer Clubs</a>
-        <a href="#">Google Developer Program</a>
+
+        <v-dialog v-model="termsDialog" max-width="800">
+          <template v-slot:activator="{ on, attrs }">
+            <a
+              v-bind="attrs"
+              v-on="on"
+            >
+              Terms of Service
+            </a>
+          </template>
+          <v-card>
+            <v-card-title class="headline justify-center" >
+              DSC NIT Rourkela | Terms of Service
+            </v-card-title>
+            <v-card-text>
+              <div class="service-terms">
+                <div class="terms">
+                  <ServiceTerms />
+                </div>
+              </div>
+            </v-card-text>
+                     <v-card-actions>
+              <v-spacer />
+              <v-btn
+            text
+            fab
+            @click="termsDialog = false"
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+          <v-spacer />
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+
+        <v-dialog v-model="policyDialog" max-width="800">
+          <template v-slot:activator="{ on, attrs }">
+            <a
+              v-bind="attrs"
+              v-on="on"
+            >
+              Privacy Policy
+            </a>
+          </template>
+          <v-card>
+            <v-card-title class="headline justify-center" >
+              DSC NIT Rourkela | Privacy Policy
+            </v-card-title>
+            <v-card-text>
+              <div class="privacy-policy">
+                <div class="policy">
+                  <PrivacyPolicy />
+                </div>
+              </div>
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer />
+              <v-btn
+            text
+            fab
+            @click="policyDialog = false"
+          >
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+          <v-spacer />
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+        
+        <a href="https://developers.google.com/community/dsc">Developer Student Clubs</a>
+        <a href="https://developers.google.com/community/gdg">Google Developer Program</a>
       </div>
       <div class="links-right">
         <p>More From Us</p>
-        <a href="#">Contact</a>
-        <a href="#">Community</a>
-        <a href="#">Youtube</a>
+        <a href="mailto:team@dscnitrourkela.org">Contact</a>
+        <a href="https://bit.ly/NITRDevs">Community</a>
+        <a href="https://youtube.com/channel/UC63nohbg_XnXz4pCAa-96GA">Youtube</a>
       </div>
     </div>
     <div class="copyright">
@@ -56,7 +123,20 @@
 </template>
 
 <script>
-export default {}
+import ServiceTerms from '~/components/ServiceTerms'
+import PrivacyPolicy from '~/components/PrivacyPolicy'
+export default {
+  data() {
+    return {
+      policyDialog: false,
+      termsDialog: false,
+    }
+  },
+  components: {
+    PrivacyPolicy,
+    ServiceTerms
+  }
+}
 </script>
 
 <style lang="scss" scoped>
