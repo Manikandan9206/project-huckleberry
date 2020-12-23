@@ -43,3 +43,44 @@ $btn-transition-duration: 0.1s !important !default;
   font-size: 2rem !important;
   line-height: 1.2;
 }
+
+.v-stepper__header {
+  justify-content: space-evenly !important;
+}
+.v-stepper__step {
+  @media (max-width: 500px) {
+    padding: 15px 0 5px !important;
+    width: 24px !important;
+    flex-basis: 25px !important;
+  }
+}
+.v-stepper__header hr {
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+.v-stepper__content {
+  .card-div {
+    max-width: 600px !important;
+    margin: auto !important;
+    text-align: center !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .v-card__title {
+    line-height: 3rem !important;
+    h1 {
+      width: 100%;
+      margin: 0.5rem 0 ;
+    }
+  }
+  .v-card__subtitle {
+    p {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+  }
+}
+}

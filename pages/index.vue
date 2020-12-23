@@ -6,9 +6,18 @@
         <img src="/DSC_cover.png" alt="DSC Cover" />
       </div>
       <div class="first-page--actions py-1 py-lg-5">
-        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn explore-btn">
-          Join us
-        </v-btn>
+        
+         <v-dialog v-model="joinDialog" max-width="1000">
+          <template v-slot:activator="{ on, attrs }">
+              <v-btn v-bind="attrs"
+              v-on="on" tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn explore-btn">
+                Join us
+              </v-btn>
+          </template>
+          <v-card>
+            <MembershipStepper @closeStepper='joinDialog=false' />
+          </v-card>
+        </v-dialog>
       </div>
     </section>
 
@@ -143,14 +152,17 @@
 import EventCard from '~/components/EventCard'
 import ProjectCard from '~/components/ProjectCard'
 import MyFooter from '~/components/MyFooter'
+import MembershipStepper from '~/components/MembershipStepper'
 export default {
   components: {
     EventCard,
     ProjectCard,
     MyFooter,
+    MembershipStepper,
   },
   data() {
     return {
+      joinDialog: false,
       events: [
         {
           id: 1,
