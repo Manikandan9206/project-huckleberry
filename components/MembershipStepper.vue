@@ -15,7 +15,9 @@
 
       <v-divider></v-divider>
 
-      <v-stepper-step :complete="e1 > 4" step="4"> Additionals </v-stepper-step>
+      <v-stepper-step :complete="e1 > 4" step="4" :rules="[() => (e1 > 4 ? addDetailFormValid : true)]">
+        Additionals
+      </v-stepper-step>
 
       <v-divider></v-divider>
 
@@ -23,11 +25,13 @@
 
       <v-divider></v-divider>
 
-      <v-stepper-step :complete="e1 > 6" step="6"> A Question </v-stepper-step>
+      <v-stepper-step :complete="e1 > 6" step="6" :rules="[() => (e1 > 6 ? impQuesFormValid : true)]">
+        A Question
+      </v-stepper-step>
 
       <v-divider></v-divider>
 
-      <v-stepper-step step="7"> Final One </v-stepper-step>
+      <v-stepper-step step="7" :rules="[() => (e1 > 7 ? finalQuesFormValid : true)]"> Final One </v-stepper-step>
     </v-stepper-header>
 
     <v-stepper-items class="membership-stepper-items">
@@ -118,7 +122,7 @@
                   ></v-text-field>
                 </div>
                 <div class="submit">
-                  <v-btn tile light block class="my-btn" @click="submitBasicDetailForm"> Sign Up </v-btn>
+                  <v-btn tile light block class="my-btn" @click="submitBasicDetailForm"> Submit </v-btn>
                 </div>
               </v-form>
             </div>
@@ -128,25 +132,112 @@
 
       <v-stepper-content step="4">
         <v-card>
-          <div class="card-div card-div-4"></div>
+          <div class="card-div card-div-4">
+            <div class="cont">
+              <v-form ref="addDetailForm" v-model="addDetailFormValid">
+                <div class="roll">
+                  <h1>What's your Student Roll?</h1>
+                  <v-text-field
+                    v-model="member.roll"
+                    :dense="$vuetify.breakpoint.xsOnly"
+                    label="Student Roll"
+                    outlined
+                    clearable
+                    :rules="[rules.required]"
+                  ></v-text-field>
+                </div>
+                <div class="mobile">
+                  <h1>Next up, Your Mobile</h1>
+                  <v-text-field
+                    v-model="member.mobile"
+                    :dense="$vuetify.breakpoint.xsOnly"
+                    label="Mobile"
+                    outlined
+                    clearable
+                  ></v-text-field>
+                </div>
+                <div class="submit">
+                  <v-btn tile light block class="my-btn" @click="submitAddDetailForm"> Proceed </v-btn>
+                </div>
+              </v-form>
+            </div>
+          </div>
         </v-card>
       </v-stepper-content>
 
       <v-stepper-content step="5">
         <v-card>
-          <div class="card-div card-div-5"></div>
+          <div class="card-div card-div-5">
+            <div class="cont">
+              <v-form ref="projectLinkForm">
+                <div class="project">
+                  <h1>Show us some Cool Projects you've done</h1>
+                  <p class="card-div--subtitle">Drop the links here. (Leave if none)</p>
+                  <v-textarea
+                    v-model="member.projectLink"
+                    outlined
+                    label="Project Link"
+                    :dense="$vuetify.breakpoint.xsOnly"
+                  ></v-textarea>
+                </div>
+                <div class="submit">
+                  <v-btn tile light block class="my-btn" @click="submitProjectLinkForm"> Next One </v-btn>
+                </div>
+              </v-form>
+            </div>
+          </div>
         </v-card>
       </v-stepper-content>
 
       <v-stepper-content step="6">
         <v-card>
-          <div class="card-div card-div-6"></div>
+          <div class="card-div card-div-6">
+            <div class="cont">
+              <v-form ref="impQuesForm" v-model="impQuesFormValid">
+                <div class="impQues">
+                  <h1>In your opinion, what is more important, a good team or a good leader?</h1>
+                  <p class="card-div--subtitle">Be Descriptive</p>
+                  <v-textarea
+                    v-model="member.impQues"
+                    outlined
+                    :rules="[rules.required, rules.impQues]"
+                    label="Your Answer Here"
+                    :dense="$vuetify.breakpoint.xsOnly"
+                  ></v-textarea>
+                </div>
+                <div class="submit">
+                  <v-btn tile light block class="my-btn" @click="submitImpQuesForm"> Go On </v-btn>
+                </div>
+              </v-form>
+            </div>
+          </div>
         </v-card>
       </v-stepper-content>
 
       <v-stepper-content step="7">
         <v-card>
-          <div class="card-div card-div-7"></div>
+          <div class="card-div card-div-7">
+            <div class="cont">
+              <v-form ref="finalQuesForm" v-model="finalQuesFormValid">
+                <div class="finalQues">
+                  <h1>Tell us some awesome ways in which you can contribute to the community and help it grow?</h1>
+                  <v-textarea
+                    v-model="member.finalQues"
+                    outlined
+                    :rules="[rules.required, rules.finalQues]"
+                    label="Your Answer Here"
+                    :dense="$vuetify.breakpoint.xsOnly"
+                  ></v-textarea>
+                </div>
+                <div class="checkbox">
+                  <v-checkbox v-model="member.sendMails" label="I agree to send me Mails for follow-up"></v-checkbox>
+                </div>
+                <div class="submit">
+                  <v-btn tile light block class="my-btn" @click="submitFinalQuesForm"> Submit </v-btn>
+                </div>
+              </v-form>
+            </div>
+          </div>
         </v-card>
       </v-stepper-content>
     </v-stepper-items>
@@ -175,14 +266,26 @@ export default {
       member: {
         firstName: '',
         lastName: '',
+        email: '',
+        roll: '',
+        mobile: '',
+        projectLink: '',
+        impQues: '',
+        finalQues: '',
+        sendMails: false,
       },
-      basicDetailFormValid: true,
+      basicDetailFormValid: false,
+      addDetailFormValid: false,
+      impQuesFormValid: false,
+      finalQuesFormValid: false,
       rules: {
         required: (value) => !!value || 'Required.',
         email: (value) => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           return pattern.test(value) || 'Invalid e-mail.'
         },
+        impQues: (v) => (v && v.length >= 100 && v.length <= 3000) || 'Please be more Descriptive',
+        finalQues: (v) => (v && v.length >= 60 && v.length <= 2000) || 'Tell us a bit more',
       },
     }
   },
@@ -191,7 +294,41 @@ export default {
     submitBasicDetailForm() {
       this.$refs.basicDetailForm.validate()
       if (this.basicDetailFormValid) {
+        this.e1 += 1
         console.log(this.member)
+      }
+    },
+    submitAddDetailForm() {
+      this.$refs.addDetailForm.validate()
+      if (this.addDetailFormValid) {
+        this.e1 += 1
+        console.log(this.member)
+      }
+    },
+    submitProjectLinkForm() {
+      this.e1 += 1
+      console.log(this.member)
+    },
+    submitImpQuesForm() {
+      this.$refs.impQuesForm.validate()
+      if (this.impQuesFormValid) {
+        this.e1 += 1
+        console.log(this.member)
+      }
+    },
+    submitFinalQuesForm() {
+      this.$refs.finalQuesForm.validate()
+      if (
+        this.member.sendMails &&
+        this.finalQuesFormValid &&
+        this.basicDetailFormValid &&
+        this.addDetailFormValid &&
+        this.impQuesFormValid
+      ) {
+        console.log('SUBMIT SUCCESS')
+        this.$emit('applySuccess')
+      } else {
+        console.log('Failed')
       }
     },
   },
@@ -256,7 +393,11 @@ export default {
   }
 }
 
-.card-div-3 {
+.card-div-3,
+.card-div-4,
+.card-div-5,
+.card-div-6,
+.card-div-7 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -270,6 +411,9 @@ export default {
     @media (max-width: 500px) {
       font-size: 2rem;
     }
+  }
+  .card-div--subtitle {
+    font-size: 1.5rem;
   }
 }
 </style>

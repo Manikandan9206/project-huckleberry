@@ -20,7 +20,21 @@
             </v-btn>
           </template>
           <v-card>
-            <MembershipStepper @closeStepper="joinDialog = false" />
+            <MembershipStepper @closeStepper="joinDialog = false" @applySuccess="applySuccess" v-if="!showSuccessMsg" />
+            <div class="successMsgBox" v-if="showSuccessMsg">
+              <div class="icon">
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+              </div>
+              <div class="msg">
+                <h1>Thank You for your Interset towards DSC NIT Rourkela</h1>
+                <h3>You'll recieve your follow-up mail shortly!</h3>
+              </div>
+              <div class="action">
+                <v-btn text fab @click="joinDialog = false" x-large>
+                  <v-icon>mdi-close</v-icon>
+                </v-btn>
+              </div>
+            </div>
           </v-card>
         </v-dialog>
       </div>
@@ -193,6 +207,7 @@ export default {
   data() {
     return {
       joinDialog: false,
+      showSuccessMsg: false,
       events: [
         {
           id: 1,
@@ -339,10 +354,50 @@ export default {
       ],
     }
   },
+  methods: {
+    applySuccess() {
+      console.log('SUBMIT SUCCESS')
+      this.showSuccessMsg = true
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+.successMsgBox {
+  height: 400px;
+  @media (max-width: 600px) {
+    height: 100vh;
+    padding: 7rem 2rem 1rem;
+  }
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 3rem 2rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  .icon {
+    font-size: 10rem;
+    @media (max-width: 600px) {
+      font-size: 15rem;
+    }
+  }
+  .msg {
+    text-align: center;
+    flex-grow: 2;
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  .action {
+  }
+}
+
 #first-page {
   margin-bottom: max(50px, 6vw);
   .first-page--image {
