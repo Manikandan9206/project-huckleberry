@@ -35,6 +35,7 @@ $btn-transition-duration: 0.1s !important !default;
   }
 }
 
+// FOOTER LINK
 .v-card__title.headline {
   font-size: 3rem !important;
   line-height: 1.5;
@@ -44,6 +45,7 @@ $btn-transition-duration: 0.1s !important !default;
   line-height: 1.2;
 }
 
+// Membership Dialog > Stepper
 .v-stepper.membership-stepper {
   display: flex;
   flex-direction: column;
@@ -82,8 +84,9 @@ $btn-transition-duration: 0.1s !important !default;
           @media (max-width: 600px) {
             height: 100%;
           }
-
           .card-div {
+            height: 100%;
+            padding: 1.2rem;
           }
         }
       }

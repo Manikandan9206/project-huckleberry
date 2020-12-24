@@ -44,6 +44,7 @@
                   :large="$vuetify.breakpoint.mdAndUp"
                   :medium="$vuetify.breakpoint.smAndBelow"
                   class="my-btn explore-btn"
+                  @click="e1 = 2"
                 >
                   Tell me more!
                 </v-btn>
@@ -97,7 +98,7 @@
       <v-btn text fab @click="$emit('closeStepper')">
         <v-icon>mdi-close</v-icon>
       </v-btn>
-      <v-btn text fab @click="e1 += 1" v-if="e1 < 7">
+      <v-btn text fab @click="e1 += 1" v-if="e1 < 7 && e1 > 1">
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
     </div>
@@ -117,16 +118,37 @@ export default {
 
 <style lang='scss' scoped>
 .card-div-1 {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    text-align: center;
+  }
 
   img {
-    width: 100%;
+    width: min(50%, 50vw);
+    @media (max-width: 800px) {
+      width: 70vw;
+      margin-bottom: 3rem;
+    }
   }
   .cont {
+    @media (max-width: 800px) {
+      padding: 0 4rem;
+    }
+    &-title {
+      font-size: 3rem;
+    }
+    &-subtitle {
+      font-size: 2.5rem;
+    }
+    &-desc {
+      font-size: 2rem;
+    }
+    &-action {
+    }
   }
 }
 </style>
