@@ -1,21 +1,26 @@
 <template>
   <v-layout column justify-center align-center text-center>
-
     <section id="first-page">
       <div class="first-page--image my-2 my-sm-5">
         <img src="/DSC_cover.png" alt="DSC Cover" />
       </div>
       <div class="first-page--actions py-1 py-lg-5">
-        
-         <v-dialog v-model="joinDialog" max-width="1000">
+        <v-dialog v-model="joinDialog" max-width="1000" :fullscreen="$vuetify.breakpoint.xsOnly">
           <template v-slot:activator="{ on, attrs }">
-              <v-btn v-bind="attrs"
-              v-on="on" tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn explore-btn">
-                Join us
-              </v-btn>
+            <v-btn
+              v-bind="attrs"
+              v-on="on"
+              tile
+              light
+              :large="$vuetify.breakpoint.mdAndUp"
+              :medium="$vuetify.breakpoint.smAndBelow"
+              class="my-btn explore-btn"
+            >
+              Join us
+            </v-btn>
           </template>
           <v-card>
-            <MembershipStepper @closeStepper='joinDialog=false' />
+            <MembershipStepper @closeStepper="joinDialog = false" />
           </v-card>
         </v-dialog>
       </div>
@@ -25,8 +30,9 @@
       <div class="head">
         <h1 class="head_text">Who Are We?</h1>
         <p class="head_desc desc">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem sint excepturi recusandae possimus dolores eos aspernatur nemo
-          delectus illum voluptates corrupti corporis adipisci eveniet eius porro unde, maiores placeat laborum.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem sint excepturi recusandae possimus dolores
+          eos aspernatur nemo delectus illum voluptates corrupti corporis adipisci eveniet eius porro unde, maiores
+          placeat laborum.
         </p>
       </div>
       <div class="cont">
@@ -36,8 +42,8 @@
           </div>
           <div class="cont-box--body">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
             </p>
           </div>
           <div class="cont-box--title">
@@ -50,8 +56,8 @@
           </div>
           <div class="cont-box--body">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
             </p>
           </div>
           <div class="cont-box--title">
@@ -64,8 +70,8 @@
           </div>
           <div class="cont-box--body">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
             </p>
           </div>
           <div class="cont-box--title">
@@ -74,7 +80,15 @@
         </div>
       </div>
       <div class="action">
-        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn" nuxt to="/about">
+        <v-btn
+          tile
+          light
+          :large="$vuetify.breakpoint.mdAndUp"
+          :medium="$vuetify.breakpoint.smAndBelow"
+          class="my-btn join-btn"
+          nuxt
+          to="/about"
+        >
           Explore More
         </v-btn>
       </div>
@@ -91,7 +105,15 @@
         </div>
       </div>
       <div class="action">
-        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn" target="_blank" href="https://dsc.community.dev/national-institute-of-technology-rourkela/">
+        <v-btn
+          tile
+          light
+          :large="$vuetify.breakpoint.mdAndUp"
+          :medium="$vuetify.breakpoint.smAndBelow"
+          class="my-btn join-btn"
+          target="_blank"
+          href="https://dsc.community.dev/national-institute-of-technology-rourkela/"
+        >
           Wanna Attend!
         </v-btn>
       </div>
@@ -108,7 +130,15 @@
         </div>
       </div>
       <div class="action">
-        <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn join-btn" href="https://github.com/dscnitrourkela" target="_blank">
+        <v-btn
+          tile
+          light
+          :large="$vuetify.breakpoint.mdAndUp"
+          :medium="$vuetify.breakpoint.smAndBelow"
+          class="my-btn join-btn"
+          href="https://github.com/dscnitrourkela"
+          target="_blank"
+        >
           Way to All Repo
         </v-btn>
       </div>
@@ -136,7 +166,7 @@
               <ion-icon name="mail-open-sharp"></ion-icon>
             </div>
             <div class="cont">
-              <h3><span>Mail to </span> <a href="mailto:dsc.nitr@gmail.com">dsc.nitr@gmail.com</a> </h3>
+              <h3><span>Mail to </span> <a href="mailto:dsc.nitr@gmail.com">dsc.nitr@gmail.com</a></h3>
             </div>
           </div>
         </div>
