@@ -19,19 +19,35 @@
         <div class="desc">
           <div class="text">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco aboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco aboris nisi ut aliquip ex
+              ea commodo consequat.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco aboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco aboris nisi ut aliquip ex
+              ea commodo consequat.
             </p>
           </div>
           <div class="actn">
-            <v-btn tile light :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn member-btn">
+            <v-btn
+              to="/"
+              tile
+              light
+              :large="$vuetify.breakpoint.mdAndUp"
+              :medium="$vuetify.breakpoint.smAndBelow"
+              class="my-btn member-btn"
+            >
               Become a Member
             </v-btn>
-            <v-btn tile :large="$vuetify.breakpoint.mdAndUp" :medium="$vuetify.breakpoint.smAndBelow" class="my-btn learn-btn">
+            <v-btn
+              href="https://dsc.community.dev/"
+              target="_blank"
+              tile
+              :large="$vuetify.breakpoint.mdAndUp"
+              :medium="$vuetify.breakpoint.smAndBelow"
+              class="my-btn learn-btn"
+            >
               Learn More
             </v-btn>
           </div>
@@ -43,8 +59,9 @@
       <div class="head">
         <h1 class="head_text">What We Do?</h1>
         <p class="head_desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
         </p>
       </div>
       <div class="cont">
@@ -77,13 +94,12 @@
       <h1 class="head_text">Community Guidelines</h1>
       <div class="guides">
         <v-expansion-panels accordion focusable hover tile>
-          <v-expansion-panel v-for="(item, i) in 5" :key="i">
+          <v-expansion-panel v-for="(item, i) in commGuide" :key="i">
             <v-expansion-panel-header>
-              <h1>ITEM</h1>
+              <h1>{{ item.title.toUpperCase() }}</h1>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              {{ item.desc }}
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
@@ -99,8 +115,9 @@
               <h1>ITEM</h1>
             </v-expansion-panel-header>
             <v-expansion-panel-content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat.
             </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
@@ -115,6 +132,36 @@ import MyFooter from '~/components/MyFooter'
 export default {
   components: {
     MyFooter,
+  },
+  data() {
+    return {
+      commGuide: [
+        {
+          title: 'be nice',
+          desc:
+            "We're all part of the same community, so be friendly, welcoming, and generally a nice person. Be someone that other people want to be around.",
+        },
+        {
+          title: 'Be respectful and constructive',
+          desc:
+            "Remember to be respectful and constructive with your communication to fellow members. Don't get into flamewars, make personal attacks, vent, or rant unconstructively. Everyone should take responsibility for the community and take the initiative to diffuse tension and stop a negative thread as early as possible.",
+        },
+        {
+          title: 'be collaborative',
+          desc: 'Work together! We can learn a lot from each other. Share knowledge, and help each other out.',
+        },
+        {
+          title: 'Participate',
+          desc:
+            'Join in on discussions, show up for in-person meetings regularly, offer feedback, and help implement that feedback.',
+        },
+        {
+          title: 'basic etiquette for online discussions',
+          desc:
+            'Don’t send messages to a big list that only need to go to one person. Keep off-topic conversations to a minimum. Don’t be spammy by advertising or promoting personal projects which are off-topic.',
+        },
+      ],
+    }
   },
 }
 </script>
@@ -148,6 +195,7 @@ export default {
           justify-content: center;
         }
         .member-btn {
+          color: #000;
           margin-right: 2rem;
         }
       }
