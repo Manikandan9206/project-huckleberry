@@ -234,9 +234,99 @@ export default {
           det: {
             title: 'Decoding Coding | Ask Us Anything',
             desc: 'Beginning your journey with Coding is always filled with a lots of doubts.',
-            link: 'https://youtube.com',
+            link: 'https://www.youtube.com/playlist?list=PLxK2vL6QW00d0g1GP4sg4ClIAtRfOPaDv',
           },
           date: 'Dec 18, 2020',
+        },
+        {
+          id: 5,
+          cover: '/event-covers/AndroidStudyJams.jpeg',
+          upcoming: false,
+          org: [
+            {
+              name: 'Chimmay',
+              photo: 'member-photos/128/chinmay-kabi.jpg',
+            },
+          ],
+          det: {
+            title: 'Android Study Jams ',
+            desc:
+              'Initiative by Google to enable more people to learn android from ground up, with the help of the numerous #dsc chapters present around the world. ',
+            link: 'https://www.youtube.com/playlist?list=PLxK2vL6QW00f56iGbnBVbXuQ1AxOjH9zw',
+          },
+          date: 'Dec 3 - 16, 2020',
+        },
+        {
+          id: 4,
+          cover: '/event-covers/AMA02.png',
+          upcoming: false,
+          org: [
+            {
+              name: 'Abel',
+              photo: 'member-photos/128/abel-mathew.jpg',
+            },
+            {
+              name: 'Roshan',
+              photo: 'member-photos/128/roshan-shaw.jpg',
+            },
+          ],
+          det: {
+            title: 'Internships & Placements | AMA',
+            desc: 'Beginning your journey with Coding is always filled with a lots of doubts.',
+            link: 'https://www.youtube.com/playlist?list=PLxK2vL6QW00d0g1GP4sg4ClIAtRfOPaDv',
+          },
+          date: 'Nov 27, 2020',
+        },
+        {
+          id: 3,
+          cover: '/event-covers/Localhost.png',
+          upcoming: false,
+          org: [
+            {
+              name: 'Harish',
+              photo: 'member-photos/128/harish-teens.jpg',
+            },
+          ],
+          det: {
+            title: 'Localhost: Hack the Technical Interview',
+            desc: 'Best practices for Technical Interview, Solve several common Technical Questions',
+            link: 'https://www.youtube.com/watch?v=J3w0GJYKwmg',
+          },
+          date: 'Sep 26, 2020',
+        },
+        {
+          id: 2,
+          cover: '/event-covers/MachineLearning.png',
+          upcoming: false,
+          org: [
+            {
+              name: 'Sayan Dey',
+              photo: 'member-photos/128/sayan-dey.jpg',
+            },
+          ],
+          det: {
+            title: 'Abstract ML | Machine Learning',
+            desc: 'Basic Introduction to Machine Learning, how to get started, common misconceptions ',
+            link: 'https://www.youtube.com/watch?v=NtgBFXt3Rls',
+          },
+          date: 'Sep 25, 2020',
+        },
+        {
+          id: 1,
+          cover: '/event-covers/PythonBot.png',
+          upcoming: false,
+          org: [
+            {
+              name: 'Vedant',
+              photo: 'member-photos/128/vedant-raghuwanshi.png',
+            },
+          ],
+          det: {
+            title: 'Make a bot using Python for AI',
+            desc: 'Learn the basic Python skills for developing Markov Chain Bot.',
+            link: 'https://www.youtube.com/watch?v=m6jm8TfNgF8&ab_channel=DSCNITRourkela',
+          },
+          date: 'Sep 20, 2020',
         },
       ],
       projects: [
