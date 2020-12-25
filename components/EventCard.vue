@@ -18,15 +18,16 @@
       <div class="event-cont--dets">
         <div class="dets">
           <h2 class="dets-title">{{ event.det.title }}</h2>
-          <p class="dets-desc">{{ event.det.desc }}</p>
+          <p class="dets-desc">{{ event.det.desc.slice(0, 75) }}...</p>
+          <a class="dets-link" target="_blank" :href="event.det.link">Watch Recordings</a>
         </div>
       </div>
-      <div class="event-cont--date">
-        <div class="date-container">
-          <h3 class="date">
-            {{ event.date }}
-          </h3>
-        </div>
+    </div>
+    <div class="event-date">
+      <div class="date-container">
+        <h3 class="date">
+          {{ event.date }}
+        </h3>
       </div>
     </div>
   </div>
@@ -49,6 +50,7 @@ export default {
   position: relative;
   transition: all 0.2s ease-in-out;
   transform: scale(0.99);
+  position: relative;
 
   &:hover {
     box-shadow: 5px 5px 20px #000;
@@ -83,7 +85,7 @@ export default {
   }
   .event-cont {
     display: grid;
-    grid-template-rows: 140px 1fr 50px;
+    grid-template-rows: 140px 1fr;
 
     position: relative;
     &--cover {
@@ -92,6 +94,7 @@ export default {
         height: 140px;
         width: 300px;
         object-fit: cover;
+        object-position: 50% 20%;
       }
     }
     &--orgs {
@@ -125,22 +128,31 @@ export default {
     }
     &--dets {
       .dets {
-        padding: 60px 30px 0 30px;
+        padding: 60px 20px 0 20px;
         &-title {
           font-size: 25px;
           line-height: 1.2;
         }
         &-desc {
-          margin-top: 5px;
+          margin-top: 10px;
           font-size: 12px;
           opacity: 0.7;
+          margin-bottom: 5px;
+        }
+        &-link {
+          opacity: 0.7;
+          font-size: 12px;
         }
       }
     }
-    &--date {
-      margin-top: -5px;
-      align-self: center;
-      font-size: 20px;
+  }
+  &-date {
+    position: absolute;
+    bottom: 10px;
+    font-size: 20px;
+    width: 100%;
+    .date-container {
+      margin: 0 auto;
     }
   }
 }

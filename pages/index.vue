@@ -210,108 +210,33 @@ export default {
       showSuccessMsg: false,
       events: [
         {
-          id: 1,
-          cover: '/event-covers/Intro to Git and Github_FB-Master.png',
-          upcoming: true,
-          org: [
-            {
-              name: 'John Doe 01',
-              photo: 'member-photos/128/harish-teens.jpg',
-            },
-          ],
-          det: {
-            title: 'Introduction To Git & GitHub',
-            desc:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
-          },
-          date: 'Jan 09, 2020',
-        },
-        {
-          id: 2,
-          cover: '/event-covers/Intro to Git and Github_FB-Master.png',
-          upcoming: true,
-          org: [
-            {
-              name: 'John Doe 01',
-              photo: 'member-photos/128/harish-teens.jpg',
-            },
-            { name: 'John Doe 02', photo: 'member-photos/128/abel-mathew.jpg' },
-          ],
-          det: {
-            title: 'Intro To Git and GitHub',
-            desc:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
-          },
-          date: 'Jan 09, 2020',
-        },
-        {
-          id: 3,
-          cover: '/event-covers/Intro to Git and Github_FB-Master.png',
-          upcoming: false,
-          org: [
-            {
-              name: 'John Doe 01',
-              photo: 'member-photos/128/harish-teens.jpg',
-            },
-          ],
-          det: {
-            title: 'Intro To Git and GitHub',
-            desc:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
-          },
-          date: 'Jan 09, 2020',
-        },
-        {
-          id: 4,
-          cover: '/event-covers/Intro to Git and Github_FB-Master.png',
-          upcoming: false,
-          org: [
-            {
-              name: 'John Doe 01',
-              photo: 'member-photos/128/harish-teens.jpg',
-            },
-          ],
-          det: {
-            title: 'Intro To Git and GitHub',
-            desc:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
-          },
-          date: 'Jan 09, 2020',
-        },
-        {
-          id: 5,
-          cover: '/event-covers/Intro to Git and Github_FB-Master.png',
-          upcoming: false,
-          org: [
-            {
-              name: 'John Doe 01',
-              photo: 'member-photos/128/harish-teens.jpg',
-            },
-            { name: 'John Doe 02', photo: 'member-photos/128/abel-mathew.jpg' },
-          ],
-          det: {
-            title: 'Intro To Git and GitHub',
-            desc:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
-          },
-          date: 'Jan 09, 2020',
-        },
-        {
           id: 6,
-          cover: '/event-covers/Intro to Git and Github_FB-Master.png',
+          cover: '/event-covers/AMA03.png',
           upcoming: false,
           org: [
             {
-              name: 'John Doe 01',
-              photo: 'member-photos/128/harish-teens.jpg',
+              name: 'Pritish',
+              photo: 'member-photos/128/pritish-samal.png',
+            },
+            {
+              name: 'Ritesh',
+              photo: 'member-photos/128/ritesh-patil.jpg',
+            },
+            {
+              name: 'Sriram',
+              photo: 'member-photos/128/patibanda-sriram.jpg',
+            },
+            {
+              name: 'Debabrat',
+              photo: 'member-photos/128/debabrata-panigrahi.png',
             },
           ],
           det: {
-            title: 'Intro To Git and GitHub',
-            desc:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
+            title: 'Decoding Coding | Ask Us Anything',
+            desc: 'Beginning your journey with Coding is always filled with a lots of doubts.',
+            link: 'https://youtube.com',
           },
-          date: 'Jan 09, 2020',
+          date: 'Dec 18, 2020',
         },
       ],
       projects: [

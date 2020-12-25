@@ -295,25 +295,25 @@ export default {
       this.$refs.basicDetailForm.validate()
       if (this.basicDetailFormValid) {
         this.e1 += 1
-        console.log(this.member)
+        // console.log(this.member)
       }
     },
     submitAddDetailForm() {
       this.$refs.addDetailForm.validate()
       if (this.addDetailFormValid) {
         this.e1 += 1
-        console.log(this.member)
+        // console.log(this.member)
       }
     },
     submitProjectLinkForm() {
       this.e1 += 1
-      console.log(this.member)
+      // console.log(this.member)
     },
     submitImpQuesForm() {
       this.$refs.impQuesForm.validate()
       if (this.impQuesFormValid) {
         this.e1 += 1
-        console.log(this.member)
+        // console.log(this.member)
       }
     },
     submitFinalQuesForm() {

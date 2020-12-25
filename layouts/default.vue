@@ -1,12 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      mobile-breakpoint="1921"
-      v-model="rightDrawer"
-      right
-      fixed
-      width="100%"
-    >
+    <v-navigation-drawer mobile-breakpoint="1921" v-model="rightDrawer" right fixed width="100%">
       <v-btn icon absolute top right @click="closeDrawer" class="pa-2">
         <v-icon @click="rightDrawer = false" x-large>mdi-close</v-icon>
       </v-btn>
@@ -22,24 +16,16 @@
     </v-navigation-drawer>
     <v-app-bar app>
       <!-- <v-toolbar-title v-text="title" /> -->
-
-      <img
-        src="~/assets/DSC-NITR.png"
-        alt="DSC NITR Logo"
-        :height="
-          $vuetify.breakpoint.xs
-            ? '24px'
-            : $vuetify.breakpoint.sm
-            ? '32px'
-            : '40px'
-        "
-      />
+      <NuxtLink to="/">
+        <img
+          src="~/assets/DSC-NITR.png"
+          alt="DSC NITR Logo"
+          :height="$vuetify.breakpoint.xs ? '24px' : $vuetify.breakpoint.sm ? '32px' : '40px'"
+        />
+      </NuxtLink>
       <v-spacer />
       <v-btn icon>
-        <v-icon
-          @click.stop="rightDrawer = true"
-          :large="$vuetify.breakpoint.sm"
-          :x-large="$vuetify.breakpoint.mdAndUp"
+        <v-icon @click.stop="rightDrawer = true" :large="$vuetify.breakpoint.sm" :x-large="$vuetify.breakpoint.mdAndUp"
           >mdi-menu</v-icon
         >
       </v-btn>
@@ -139,7 +125,3 @@ export default {
 }
 </style>
 
-/* &::before { content: ''; display: block; position: absolute; top: 0; left: 0;
-height: 100%; width: 0%; background-color: white; z-index: -1; } &:hover {
-color: #fff; -webkit-text-stroke-width: 4px; -webkit-text-stroke-color: #2c2c2c;
-} &:hover::before { width: 100%; } */
