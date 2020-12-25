@@ -5,7 +5,12 @@
         <img src="/DSC_cover.png" alt="DSC Cover" />
       </div>
       <div class="first-page--actions py-1 py-lg-5">
-        <v-dialog v-model="joinDialog" max-width="1000" :fullscreen="$vuetify.breakpoint.xsOnly">
+        <v-dialog
+          v-model="joinDialog"
+          max-width="1000"
+          :fullscreen="$vuetify.breakpoint.xsOnly"
+          content-class="mebershipDialog"
+        >
           <template v-slot:activator="{ on, attrs }">
             <v-btn
               v-bind="attrs"

@@ -34,6 +34,20 @@ $btn-transition-duration: 0.1s !important !default;
     box-shadow: none !important;
   }
 }
+.serviceTermsDialog.v-dialog,
+.mebershipDialog.v-dialog,
+.privacyPolicyDialog.v-dialog {
+  overflow: scroll !important;
+  overflow-x: hidden !important;
+  &::-webkit-scrollbar {
+    width: 4px;
+    background: #222;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background: #000;
+  }
+}
 
 // FOOTER LINK
 .v-card__title.headline {

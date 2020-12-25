@@ -38,19 +38,12 @@
       <div class="links-middle">
         <p>Useful Links</p>
 
-        <v-dialog v-model="termsDialog" max-width="800">
+        <v-dialog v-model="termsDialog" max-width="800" content-class="serviceTermsDialog">
           <template v-slot:activator="{ on, attrs }">
-            <a
-              v-bind="attrs"
-              v-on="on"
-            >
-              Terms of Service
-            </a>
+            <a v-bind="attrs" v-on="on"> Terms of Service </a>
           </template>
-          <v-card>
-            <v-card-title class="headline justify-center" >
-              DSC NIT Rourkela | Terms of Service
-            </v-card-title>
+          <v-card class="serviceTermsDialog-card">
+            <v-card-title class="headline justify-center"> DSC NIT Rourkela | Terms of Service </v-card-title>
             <v-card-text>
               <div class="service-terms">
                 <div class="terms">
@@ -58,33 +51,22 @@
                 </div>
               </div>
             </v-card-text>
-                     <v-card-actions>
+            <v-card-actions>
               <v-spacer />
-              <v-btn
-            text
-            fab
-            @click="termsDialog = false"
-          >
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-          <v-spacer />
+              <v-btn text fab @click="termsDialog = false">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+              <v-spacer />
             </v-card-actions>
           </v-card>
         </v-dialog>
 
-        <v-dialog v-model="policyDialog" max-width="800">
+        <v-dialog v-model="policyDialog" max-width="800" content-class="privacyPolicyDialog">
           <template v-slot:activator="{ on, attrs }">
-            <a
-              v-bind="attrs"
-              v-on="on"
-            >
-              Privacy Policy
-            </a>
+            <a v-bind="attrs" v-on="on"> Privacy Policy </a>
           </template>
           <v-card>
-            <v-card-title class="headline justify-center" >
-              DSC NIT Rourkela | Privacy Policy
-            </v-card-title>
+            <v-card-title class="headline justify-center"> DSC NIT Rourkela | Privacy Policy </v-card-title>
             <v-card-text>
               <div class="privacy-policy">
                 <div class="policy">
@@ -94,18 +76,14 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer />
-              <v-btn
-            text
-            fab
-            @click="policyDialog = false"
-          >
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-          <v-spacer />
+              <v-btn text fab @click="policyDialog = false">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+              <v-spacer />
             </v-card-actions>
           </v-card>
         </v-dialog>
-        
+
         <a href="https://developers.google.com/community/dsc">Developer Student Clubs</a>
         <a href="https://developers.google.com/community/gdg">Google Developer Program</a>
       </div>
@@ -134,8 +112,8 @@ export default {
   },
   components: {
     PrivacyPolicy,
-    ServiceTerms
-  }
+    ServiceTerms,
+  },
 }
 </script>
 
