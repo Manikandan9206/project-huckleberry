@@ -5,7 +5,11 @@
     </div>
     <div class="project-cont">
       <h2 class="project-cont--title">{{ project.title }}</h2>
-      <p class="project-cont--desc">{{ project.desc }}</p>
+      <div class="project-cont--desc">
+        <p>{{ project.desc }}</p>
+        <a :href="project.link" class="project-cont--desc">Watch Project</a>
+      </div>
+
       <div class="project-cont--dets">
         <div class="contr">
           <ion-icon name="people"></ion-icon>
@@ -16,8 +20,8 @@
           <ion-icon name="git-branch"></ion-icon>
         </div>
       </div>
-      <v-btn small width="120" light>
-        <h1>Contribute</h1>
+      <v-btn small width="120" light :href="project.ghLink" target="_blank">
+        <h1 class="action-text">Contribute</h1>
       </v-btn>
     </div>
   </div>
@@ -62,9 +66,9 @@ export default {
     }
   }
   &-cont {
-    padding: 20px;
+    padding: 12px 16px;
     display: grid;
-    grid-template-rows: 40px 1fr 40px 30px;
+    grid-template-rows: 40px 120px 40px 30px;
     justify-items: center;
     @media (max-width: 450px) {
       grid-template-rows: 35px 1fr 40px 25px;
@@ -79,8 +83,27 @@ export default {
       }
     }
     &--desc {
+      padding: 0 3px 0 0;
       font-size: 12px;
       opacity: 0.7;
+      height: 90%;
+      overflow: scroll;
+      overflow-x: hidden;
+      &::-webkit-scrollbar {
+        width: 2px;
+        background: #222;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #000;
+      }
+
+      p {
+        margin-top: 7px;
+        margin-bottom: 5px;
+      }
+      a {
+        color: #fff;
+      }
       @media (max-width: 450px) {
         font-size: 8px;
         padding: 0 10px;
@@ -121,6 +144,9 @@ export default {
         padding: 1px 5px 0;
         font-size: 18px;
       }
+    }
+    .action-text {
+      color: #000;
     }
   }
 }

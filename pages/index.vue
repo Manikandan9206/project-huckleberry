@@ -335,14 +335,16 @@ export default {
           cover: '/project-covers/1.png',
           title: 'Avacado',
           desc:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
-          contr: '40',
-          forks: '29',
+            'The project repository of the mobile app development for Institute Counselling Services, NIT Rourkela.',
+          contr: '14',
+          forks: '30',
+          link: 'https://play.google.com/store/apps/details?id=in.ac.nitrkl.scp.scp',
+          ghLink: 'https://github.com/dscnitrourkela/project-avocado',
         },
         {
           id: 2,
           cover: '/project-covers/2.png',
-          title: 'Banana',
+          title: 'Dates',
           desc:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
           contr: '40',
@@ -351,7 +353,7 @@ export default {
         {
           id: 3,
           cover: '/project-covers/3.png',
-          title: 'Cherry',
+          title: 'Elaichi',
           desc:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
           contr: '40',
@@ -360,7 +362,7 @@ export default {
         {
           id: 4,
           cover: '/project-covers/4.png',
-          title: 'Dates',
+          title: 'Gauva',
           desc:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua defantu. ',
           contr: '40',
