@@ -242,6 +242,62 @@ export default {
             in: 'https://www.linkedin.com/in/manikandan-l-57b57b134/',
           },
         },
+        {
+          id: 'vedant-raghuwanshi',
+          name: 'Vedant ',
+          desc: 'Python Development',
+          cont:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          social: {
+            ig: 'https://instagram.com/vedant.o7',
+            gh: 'https://github.com/007vedant',
+            tw: '',
+            fb: '',
+            in: 'https://linkedin.com/in/vedantraghuwanshi',
+          },
+        },
+        {
+          id: 'chandrachud-pati',
+          name: 'Chandrachud Pati',
+          desc: 'Python Development',
+          cont:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          social: {
+            ig: 'https://www.instagram.com/_chandrachud23_/?hl=en',
+            gh: 'https://github.com/Chandrachud23',
+            tw: '',
+            fb: '',
+            in: 'https://www.linkedin.com/in/chandrachud-pati',
+          },
+        },
+        {
+          id: 'prachi-nandi',
+          name: 'Prachi Nandi',
+          desc: 'Web Development',
+          cont:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          social: {
+            ig: '',
+            gh: 'https://github.com/prachi237',
+            tw: '',
+            fb: '',
+            in: 'https://www.linkedin.com/in/prachi-nandi-461641198/',
+          },
+        },
+        {
+          id: 'deba-panigrahi',
+          name: 'Deba Panigrahi',
+          desc: 'Python Development',
+          cont:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+          social: {
+            ig: 'https://www.instagram.com/panigrahi_debabrata_/',
+            gh: 'https://github.com/Debanitrkl',
+            tw: '',
+            fb: '',
+            in: 'https://www.linkedin.com/in/debabrata-panigrahi-99a76617b/',
+          },
+        },
       ],
     }
   },

@@ -216,7 +216,7 @@ export default {
           org: [
             {
               name: 'Pritish',
-              photo: 'member-photos/128/pritish-samal.png',
+              photo: 'member-photos/128/pritish-samal.jpg',
             },
             {
               name: 'Ritesh',
@@ -227,8 +227,8 @@ export default {
               photo: 'member-photos/128/patibanda-sriram.jpg',
             },
             {
-              name: 'Debabrat',
-              photo: 'member-photos/128/debabrata-panigrahi.png',
+              name: 'Deba',
+              photo: 'member-photos/128/deba-panigrahi.png',
             },
           ],
           det: {
@@ -318,7 +318,7 @@ export default {
           org: [
             {
               name: 'Vedant',
-              photo: 'member-photos/128/vedant-raghuwanshi.png',
+              photo: 'member-photos/128/vedant-raghuwanshi.jpg',
             },
           ],
           det: {
