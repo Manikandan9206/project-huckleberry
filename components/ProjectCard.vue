@@ -7,7 +7,7 @@
       <h2 class="project-cont--title">{{ project.title }}</h2>
       <div class="project-cont--desc">
         <p>{{ project.desc }}</p>
-        <a :href="project.link" class="project-cont--desc">Watch Project</a>
+        <a v-if="project.link" :href="project.link" class="project-cont--desc">Watch Project</a>
       </div>
 
       <div class="project-cont--dets">
@@ -90,7 +90,7 @@ export default {
       overflow: scroll;
       overflow-x: hidden;
       &::-webkit-scrollbar {
-        width: 2px;
+        width: 1px;
         background: #222;
       }
       &::-webkit-scrollbar-thumb {
